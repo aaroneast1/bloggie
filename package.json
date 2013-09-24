@@ -5,10 +5,13 @@
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-uglify": "~0.2.4"
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-simple-mocha": "~0.4.0"
   },
   "dependencies": {
     "underscore": "~1.5.2",
-    "rethinkdb": "~1.9.0-1"
-  }
+    "rethinkdb": "~1.9.0-1",
+    "express": "~3.4.0"
+  },
+  "engine": "node >= 0.10.1"
 }
