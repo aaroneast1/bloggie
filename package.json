@@ -1,6 +1,15 @@
 {
   "name": "bloggie",
   "version": "0.1.0",
+  "description": "My first node application",
+  "homepage": "https://github.com/aaroneast1",
+
+  "author": {
+    "name": "Aaron East",
+    "email": "aaron.east@expressivesoftware.co.uk"
+  },
+
+  
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.4",
@@ -8,10 +17,12 @@
     "grunt-contrib-uglify": "~0.2.4",
     "grunt-simple-mocha": "~0.4.0"
   },
+
   "dependencies": {
     "underscore": "~1.5.2",
     "rethinkdb": "~1.9.0-1",
     "express": "~3.4.0"
   },
+
   "engine": "node >= 0.10.1"
 }
