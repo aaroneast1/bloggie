@@ -1,7 +1,5 @@
 // r basic API calls
 
-console.log("running tests....");
-
 var assert = require("assert");
 var _ = require("underscore");
 var r = require("rethinkdb");
@@ -84,8 +82,6 @@ describe('How to use rethinkdb', function(){
 
   // Before test suite
   before(function(done){
-    console.log(" ## Before ## ");
-
     this.timeout(5000);
 
     r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
@@ -380,7 +376,7 @@ describe('How to use rethinkdb', function(){
 
       });
 
-      it('should be able to retrieve users between ages 20 and 24', function(done){
+      it('should be able to retrieve users by a range of ages', function(done){
         
         r.table("users").indexCreate('age').run(connection, function(err, result){
             if (err) throw err;
