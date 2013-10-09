@@ -388,13 +388,17 @@ describe('How to use rethinkdb', function(){
 
                 var results = [];
 
-                cursor.toArray(function(err, result) {
-                  if (err) throw err;
-                  results = result;
-                });
+                cursor.each(function(err, item){
+                  results.push(item);
+                })
+
+                // cursor.toArray(function(err, result) {
+                //   if (err) throw err;
+                //   results = result;
+                // });
 
                 // Assert
-                results.should.have.lengthOf(6)
+                results.should.have.lengthOf(6);
 
                 // remove index 
                 r.table("users").indexDrop('age').run(connection, function(err, result){
@@ -402,55 +406,55 @@ describe('How to use rethinkdb', function(){
 
                     done();
                 });
-                
              });
 
         });
 
       }); 
 
-      // it('should be able to retrieve records from users table', function(done){
+      it('should be able to retrieve records from users table', function(done){
 
-      //   r.table("users")
-      //    .insert(users, {upsert: true})
-      //    .run(connection, function(err,result){
-      //       if (err) throw done(err);
-      //    });
+        r.table("users").indexCreate('male').run(connection, function(err, result){
+            if (err) throw err;
 
-      //   r.table("users")
-      //    .getAll('male')
-      //    .run(connection, function(err, result){
-      //       if (err) throw done(err);
-
-      //       console.log("getAll arguments", arguments);
-
-      //       // Assert
-      //       assertObject( user1, result );            
-      //       done();
-      //    });
-
-      // });      
+            var results = [];
+         
+            r.table("users")
+             .getAll(true, {index:'male'})
+             .run(connection, function(err, cursor){
+                if (err) throw done(err);
 
 
-      // it('should be able to filter by a value to retrieve a record from users table', function(done){
-        
-      //   r.table("users")
-      //    .insert( user2, {upsert: true})
-      //    .run(connection, function(err){
-      //       if (err) throw done(err);
-      //    });
+                cursor.each(function(err, item){
+                  results.push(item);
+                });
 
-      //    r.table("users").filter({ male : true}).run( connection, function(err, result){
-      //         if (err) throw done(err);
+                // Assert
+                results.should.have.lengthOf(8);            
+                done();
+             });
 
-      //         console.log("filter result",result);
+        });
+      });      
 
-      //         // assertObject( user1, result );
-      //         done();
-      //       }); 
 
-      // });
+      it('should be able to filter by a value to retrieve a record from users table', function(done){
+
+         r.table("users").filter({ male : true}).run( connection, function(err, cursor){
+              if (err) throw done(err);
+
+              var results = [];
+              cursor.toArray(function(err, items){
+                  results = items;
+              });
+
+              results.should.have.lengthOf(8);  
+              done();
+            }); 
+
+      });
+
+
   });
-
 
 });
