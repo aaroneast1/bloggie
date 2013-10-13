@@ -3,25 +3,100 @@
 	{
 		"selected_items":
 		[
+			[
+				"retu",
+				"return_vals"
+			],
+			[
+				"drop",
+				"dbDrop"
+			],
+			[
+				"firstname",
+				"firstnameArr"
+			],
+			[
+				"new",
+				"new_val"
+			],
+			[
+				"val",
+				"return_vals"
+			],
+			[
+				"table",
+				"tableList"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "test/rethinkdb-test.js",
+			"settings":
+			{
+				"buffer_size": 11870,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/express-test.js",
+			"settings":
+			{
+				"buffer_size": 166,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nSublimeGit:\n----------\n\n  Welcome to SublimeGit\n  =====================\n  \n  SublimeGit is a full-featured, commercial plugin for integrating\n  git into Sublime Text 2 and 3. To read more about it, or purchase\n  a license, go to https://sublimegit.net.\n  \n  \n  Quickstart\n  ----------\n  Make sure to restart Sublime Text after installing SublimeGit.\n  \n  Run the command \"Git: Status\" to open the status view. This\n  is where you'll spend most of the time when interacting with\n  git through SublimeGit. From here you can stage/unstage files,\n  manage stashes, view diffs, and initiate a commit.\n  \n  Other commands are available in the command palette (cmd+shift+p\n  on OS X, ctrl+shift+p on Windows/Linux). They are all prefixed\n  with \"Git:\" and most of them do exactly what it says on the label.\n  \n  \n  Tutorial\n  --------\n  For the full tutorial, go to:\n  \n      https://docs.sublimegit.net/tutorial.html\n  \n  \n  Trouble Getting Started?\n  ------------------------\n  If you are on windows, or don't usually use git from the command\n  line, there might be some things you'll need to set up. Go here\n  for instructions on how to get set up:\n  \n      https://docs.sublimegit.net/quickstart.html\n  \n  \n  Issues, Questions or Bugs?\n  --------------------------\n  Send a mail to support@sublimegit.net, or report it in the issue\n  tracker:\n  \n      https://github.com/SublimeGit/SublimeGit/issues\n  \n",
+			"settings":
+			{
+				"buffer_size": 1451,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"scratch": true
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 27.0,
 		"selected_items":
 		[
+			[
+				"Git:pull",
+				"Git: Pull"
+			],
+			[
+				"Git: status",
+				"Git: Status"
+			],
+			[
+				"Git: pull",
+				"Git: Pull"
+			],
+			[
+				"Git: Status",
+				"Git: Status"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			]
 		],
-		"width": 0.0
+		"width": 467.0
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 126.0,
 		"history":
 		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
 		]
 	},
 	"distraction_free":
@@ -35,18 +110,28 @@
 	},
 	"file_history":
 	[
+		"/Users/aeast/Desktop/Jvm_commands_visa",
+		"/Users/aeast/Desktop/Visa_curl_post_to_TM",
+		"/Users/aeast/Documents/workspace/es/bloggie/test/rethinkdb-test.js",
+		"/Users/aeast/Documents/workspace/es/bloggie/index.js",
+		"/Users/aeast/Documents/workspace/es/bloggie/lib/db.js",
+		"/Users/aeast/Documents/workspace/es/bloggie/Gruntfile.js",
+		"/Users/aeast/Documents/workspace/es/bloggie/package.json",
+		"/Users/aeast/Documents/workspace/es/bloggie/rethinkdb-test.js",
+		"/Users/aeast/Documents/workspace/es/bloggie/test/rethinkdbTest.js",
 		"/Users/aeast/Documents/workspace/es/yuliapylyavskaya/src/bootstrap.js",
 		"/Volumes/Secure/dev/vme/vme-modules/vme-registration/build/test-results/TEST-me.v.registration.transformer.NotificationDataToXmlTransformerTest.xml"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"rethinkdb-test.js"
 		]
 	},
 	"find_state":
@@ -54,6 +139,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console.log",
+			"range",
+			"err",
+			");\n",
+			"dbSetup",
+			"expected",
+			"redirect",
+			"redirect.",
+			"integration.synchronousInvoke(integration.endSession);",
+			"r.connection",
+			"rethinkdb",
+			"db",
+			"dao",
+			";\n",
+			"should",
+			"\n    ",
+			"\",\n",
 			"()"
 		],
 		"highlight": true,
@@ -62,18 +164,108 @@
 		"regex": false,
 		"replace_history":
 		[
+			"user1",
+			"connection",
+			"r",
+			"rethinkdb",
+			"db",
+			"describe"
 		],
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "test/rethinkdb-test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11870,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/express-test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								160,
+								160
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1451,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								781,
+								781
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 84.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -108,10 +300,14 @@
 		]
 	},
 	"menu_visible": true,
+	"output.git-pull":
+	{
+		"height": 100.0
+	},
 	"project": "bloggie.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -145,7 +341,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 238.0,
+	"side_bar_width": 189.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -1,4 +1,4 @@
-// r basic API calls
+// Learning how to use rethinkdb
 
 var assert = require("assert");
 var _ = require("underscore");
@@ -12,18 +12,20 @@ var errorCallback = function( err, result ){
 var createDb = function( connection, dbName ){
   r.dbCreate(dbName).run(connection, function(err, result) {
     if (err) return done(err);
+
+    connection.use(dbName);
   });
 };
 
 var dropDb = function( connection, dbName ){
   r.dbDrop(dbName).run(connection, function(err, result) {
-    if (err) return done(err);
+    if (err) return err;
   });
 };
 
 var dropTables = function( connection, dbName ){
   r.tableList().run(connection, function( err, tables ){
-    if (err) return done(err);
+    if (err) return err;
   
     _.each(tables, function( t ){
       r.db(dbName).tableDrop(t).run(connection, errorCallback);
@@ -150,7 +152,7 @@ describe('How to use rethinkdb', function(){
 
       it('should create a table called users', function(done){
         r.tableCreate("users").run(connection, function(err, result) {
-          if (err) throw done(err);
+          if (err) throw err;
           result.should.have.property('created', 1);
           done(); 
         });
@@ -163,7 +165,7 @@ describe('How to use rethinkdb', function(){
         r.table("users")
          .insert( user1, {upsert: true, return_vals: true})
          .run(connection, function(err, result){
-            if (err) throw done(err);
+            if (err) throw err;
 
             // Assert
             should.exist(result.new_val.id);
@@ -180,7 +182,7 @@ describe('How to use rethinkdb', function(){
         r.table("users")
          .insert( users, {upsert: true})
          .run(connection, function(err, result){
-            if (err) throw done(err);
+            if (err) throw err;
 
             // Assert
             should(result).have.property('unchanged', 1);
@@ -197,7 +199,7 @@ describe('How to use rethinkdb', function(){
         r.table("users").get(user1.id)
          .update({age : 30})
          .run(connection, function(err, result){
-            if (err) throw done(err);
+            if (err) throw err;
 
             // Assert
             should(result).have.property('replaced', 1);
@@ -214,7 +216,7 @@ describe('How to use rethinkdb', function(){
         r.table("users").filter(r.row('male').eq(true))
          .update({mobile : 07555588888})
          .run(connection, function(err, result){
-            if (err) throw done(err);
+            if (err) throw err;
 
             // Assert
             should(result).have.property('replaced', 2);
@@ -234,7 +236,7 @@ describe('How to use rethinkdb', function(){
         .get(user1.id)
         .replace(user1Clone)
          .run(connection, function(err, result){
-            if (err) throw done(err);
+            if (err) throw err;
 
             // Assert
             should(result).have.property('replaced', 1);

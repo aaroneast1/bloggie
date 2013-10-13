@@ -18,7 +18,8 @@
   "dependencies": {
     "underscore": "~1.5.2",
     "rethinkdb": "~1.9.0-1",
-    "express": "~3.4.0"
+    "express": "~3.4.0",
+    "superagent": "~0.15.5"
   },
   "engine": "node >= 0.10.1"
 }
