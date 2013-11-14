@@ -19,7 +19,7 @@ var createDb = function( connection, dbName ){
 
 var dropDb = function( connection, dbName ){
   r.dbDrop(dbName).run(connection, function(err, result) {
-    if (err) return err;
+    if (err) throw err;
   });
 };
 
@@ -67,7 +67,7 @@ var createUUID = function() {
 
     var uuid = s.join("");
     return uuid;
-}
+};
 
 
 
@@ -90,7 +90,7 @@ describe('How to use rethinkdb', function(){
       if (err) return done(err);
       connection = conn;
 
-      dbSetup( connection, "bloggie_test", done );
+      dbSetup( connection, "bcreateDbdbloggie_test", done );
 
       done();
     });
