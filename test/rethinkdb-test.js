@@ -9,11 +9,11 @@ var errorCallback = function( err, result ){
   if (err) return done(err);
 };
 
-var createDb = function( connection, dbName ){
+var createDb = function( connection, dbName, callback ){
   r.dbCreate(dbName).run(connection, function(err, result) {
-    if (err) return done(err);
-
+    if (err) throw err;
     connection.use(dbName);
+    callback();
   });
 };
 
@@ -34,13 +34,12 @@ var dropTables = function( connection, dbName ){
   });
 };
 
-var dbSetup = function( connection, dbName ){
+var dbSetup = function( connection, dbName, callback ){
   r.dbList().run(connection, function( err, dbs ){
     if(_.contains(dbs, dbName)){
         dropDb( connection, dbName );
     }
-    createDb( connection, dbName );
-    connection.use(dbName);
+    createDb( connection, dbName, callback );
   });
 };
 
@@ -89,10 +88,7 @@ describe('How to use rethinkdb', function(){
     r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
       if (err) return done(err);
       connection = conn;
-
-      dbSetup( connection, "bcreateDbdbloggie_test", done );
-
-      done();
+      dbSetup( connection, "bloggie_test", done );
     });
   });
 

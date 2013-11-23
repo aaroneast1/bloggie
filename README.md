@@ -1,10 +1,9 @@
-Bloggie
--------
+Trying out Node.js 
+with express, rethinkdb, mocha and grunt
+========================================
 
-A stab at getting node application running.
+I wrote this project to try and get my head around using express, rethinkdb and testing with mocha.
 
-Ideas - 
+To run the tests simply execute grunt in the root of the project.  I have not included the libraries so you will need to download them using npm.
 
-* Voice to text using speak.js 
-* http://jnjnjn.com/187/playing-audio-on-the-ipad-with-html5-and-javascript/
-* https://github.com/kripken/speak.js
+

@@ -1,7 +1,7 @@
 {
-  "name": "bloggie",
+  "name": "rethinkdb-express-test-examples",
   "version": "0.1.0",
-  "description": "My first node application",
+  "description": "An attempt to familiarize myself with express, rethindkdb, grunt, mocha and should libs.",
   "homepage": "https://github.com/aaroneast1",
   "author": {
     "name": "Aaron East",
@@ -12,14 +12,15 @@
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-uglify": "~0.2.4",
-    "should": "~1.3.0",
-    "grunt-simple-mocha": "~0.4.0"
+    "should": "~2.1.0",
+    "grunt-simple-mocha": "~0.4.0",
+    "superagent": "~0.15.5"
   },
   "dependencies": {
     "underscore": "~1.5.2",
-    "rethinkdb": "~1.9.0-1",
+    "rethinkdb": "~1.10.0-0",
     "express": "~3.4.0",
     "superagent": "~0.15.5"
   },
-  "engine": "node >= 0.10.1"
+  "engine": "node >= 0.10.22"
 }
